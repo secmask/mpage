@@ -4,7 +4,6 @@ html
 		meta[charset="UTF-8"]
 		link[href="/static/style.css"][rel="stylesheet"][type="text/css"]
 	body
-	    p hello
 		div.wrapper
 			nav#main-nav
 				ul.menu.clearfix
