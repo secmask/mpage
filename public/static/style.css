@@ -1,0 +1,133 @@
+body {
+	color: #222;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin: 0 auto;
+    max-width: 1280px;
+    position: relative;
+    background-color: #EFEFEF;
+}
+
+.wrapper {
+	margin: 0 auto; max-width : 1018px;
+	background: none repeat scroll 0 0 #f8f8f8;
+	max-width: 1018px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+a.menu {
+	text-decoration: none;
+	display: block;
+	color: #fff;
+}
+#main-nav a {
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    padding: 8px 12px 0 10px;
+}
+a.article{
+	color: black;
+}
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+ul.menu {
+	list-style-type: none;
+}
+
+li.menu {
+	float: left;
+}
+li:hover > a {
+    background-color: #EE0000;
+}
+
+#main{
+	padding: 20px 2.5%;
+}
+
+#main-nav {
+	background: none repeat scroll 0 0 #dd3333;
+	border-color: #dd3333;
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2) inset;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+#main-nav a:focus {
+    background: none repeat scroll 0 0 #ea3131;
+}
+.container {
+    margin: 0 auto;
+    max-width: 978px;
+}
+.widget, article {
+    background: none repeat scroll 0 0 #fff;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+* html .clearfix {
+	zoom: 1;
+} /* IE6 */
+*:first-child+html .clearfix {
+	zoom: 1;
+} /* IE7 */
+
+img.ocenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+
+div.content{
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	border-radius: 0px;
+	padding: 0 15px 15px;
+	margin-top: 15px;
+}
+.subHead{
+	background: #f1f1ec none repeat scroll 0 0;
+	border-color: #dcdcdc;
+	border-image: none;
+	border-style: none none solid;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-width: 0 0 1px;
+	color: #666;
+	font-size: 16px;
+	margin: 0 -15px 15px;
+	padding: 10px 15px;
+
+}
+.recentNews .messageContent {
+	font-size: 15px;
+	line-height: 1.4;
+	text-align: justify;
+}

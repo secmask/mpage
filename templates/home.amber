@@ -1,0 +1,20 @@
+doctype 5
+html
+	head
+		meta[charset="UTF-8"]
+		link[href="/static/style.css"][rel="stylesheet"][type="text/css"]
+	body
+		div.wrapper
+			nav#main-nav
+				ul.menu.clearfix
+					each $cat in cats
+						li.menu
+							a.menu[href=$cat] #{$cat}
+			each $art in arts
+				div.content
+					h3.subHead
+						a.article[href="http://"] #{$art.Title}
+					div#main[class="clearfix container"]
+						article
+							img[src=$art.Image][class="ocenter"]
+							p.recentNews #{$art.Body}
