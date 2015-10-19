@@ -3,8 +3,11 @@ package main
 import (
 	"github.com/go-martini/martini"
 	"github.com/llun/martini-amber"
+	"github.com/martini-contrib/sessions"
 	"github.com/garyburd/redigo/redis"
 	"time"
+	"net/http"
+	"log"
 )
 
 type Article struct{
@@ -53,10 +56,25 @@ func main() {
 	m.Use(martini_amber.Renderer(map[string]string{
 
 	}))
-	m.Get("/", func(r martini_amber.Render) {
-		
-		vars := map[string]interface{}{"cats": []string{"Home", "Product", "Contact","Live Showing"},"arts":arts}
+	store := sessions.NewCookieStore([]byte("secret...."))
+	m.Use(sessions.Sessions("msession",store))
+	m.Get("/", func(r martini_amber.Render,request *http.Request,session sessions.Session) {
+		log.Println(request.UserAgent())
+		name := session.Get("name")
+		if name==nil && request.FormValue("name")!=""{
+			session.Set("name",request.FormValue("name"))
+		}
+		vars := map[string]interface{}{"cats": []string{"Home", "Product", "Contact","Live Showing"},"arts":arts,"name":name}
 		r.Amber(200, "home", vars)
+	})
+	m.Get("/test", func(r martini_amber.Render,request *http.Request,session sessions.Session) {
+		log.Println(request.UserAgent())
+		name := session.Get("name")
+		if name==nil && request.FormValue("name")!=""{
+			session.Set("name",request.FormValue("name"))
+		}
+		vars := map[string]interface{}{"cats": []string{"Home", "Product", "Contact","Live Showing"},"arts":arts,"name":name}
+		r.Amber(200, "test", vars)
 	})
 
 	m.RunOnAddr(":8080")
